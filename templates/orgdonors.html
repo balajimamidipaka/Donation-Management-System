@@ -1,0 +1,31 @@
+{% extends 'organisationhome.html' %}
+{% block 'body' %}
+<br><br>
+<table class="table table-success table-hover table-striped">
+    <thead>
+    <tr>
+        <td class="text-success fs-4"><b>Donor</b></td>
+        <td class="text-success fs-4"><b>Email</b></td>
+        <td class="text-success fs-4"><b>Address</b></td>
+        <td class="text-success fs-4"><b>Age</b></td>
+        <td class="text-success fs-4"><b>Amount</b></td>
+        <td class="text-success fs-4"><b>Date</b></td>
+        <td class="text-success fs-4"><b>Time</b></td>
+
+    </tr>
+    </thead>
+    <tbody>
+    {% for orgd in orgdon %}
+    <tr>
+        <td class="fs-5">{{orgd.donor.name}}</td>
+        <td class="fs-5">{{orgd.donor.email}}</td>
+        <td class="fs-5">{{orgd.donor.address}}</td>
+        <td class="fs-5">{{orgd.donor.age}}</td>
+        <td class="fs-5">{{orgd.amount}}</td>
+         <td class="fs-5">{{orgd.date}}</td>
+         <td class="fs-5">{{orgd.time}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
